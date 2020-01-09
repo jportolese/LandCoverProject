@@ -312,7 +312,7 @@ Resampling results across tuning parameters:
 Accuracy was used to select the optimal model using the largest value.
 The final value used for the model was mtry = 2.
 
-The model created decision trees based on subsets of the 7 bands of info (7 predictors) and 693 training pixels (samples) to predict 9 classes.  The training pixels generated an accuracy of .9715 and a Kappa of .9544 and performed best when mtry = 2 (2 Randomly Selected Predictors)
+The model created decision trees based on subsets of the 7 bands of info (7 predictors) and 693 training pixels (samples) to predict 9 classes.  The training pixels generated an accuracy of 0.9746 and a Kappa of 0.9535 and performed best when mtry = 2 (2 Randomly Selected Predictors)
 
 ![**_Figure 10 : Model Plot Accuracy vs. Number of Predictors_**](images/modelPlot.png)
 
@@ -439,8 +439,8 @@ A reformated confusion matrix is below
 
 ## Conclusions
 
-Overall the Accuracy of the predictions across all of the 5000 samples was 83.6%.  Some of the individual landcover accuracies were quite poor.  Impervious at 16% was often confused with Bare Ground as well as water. This might be expected as sand and concrete have similar spectral signatures.  Deciduous Forest performed well but confusion exists between it and coniferous forest as well as Scrub/Shrub.  Water was by far the most accurate at 99% and it also made up a significant amount of the image.  This helped the overall accuracy.  The worst performing landcover was #6 Palustrine Wetland at 3%.  This landcover is a considerable mix of water, and different vegetation types so it was hard to identify pure pixels for training the model that didn't spectrally resemble other landcover types.  Wetlands in general didn't perform well.
+Overall the Accuracy of the predictions across all of the 5000 samples was 83.8%.  Some of the individual landcover accuracies were quite poor.  Impervious at 20% was often confused with Bare Ground. This might be expected as sand and concrete have similar spectral signatures.  Deciduous Forest performed well but confusion exists between it and coniferous forest as well as Scrub/Shrub.  Water was by far the most accurate at 99% and it also made up a significant amount of the image.  This helped the overall accuracy.  The worst performing landcover was #6 Palustrine Wetland at 15.4%.  This landcover is a mix of water, and different vegetation types so it was hard to identify pure pixels for training the model that didn't spectrally resemble other landcover types.  Wetlands in general didn't perform well.
 
 The coarse spatial resolution and over enthusiastic choice of landcovers (too specific) probably led to poor accuracies.  A 30m area on the ground often contains considerable variation in landcover types.  Also the nature of some of the landcovers chosen may themselves contain some built in confusion. The Developed / Grassland class is not a pure landcover as it contains housing, lawns and an occasional brush or tree.  Mixed pixels are a problem in all coarse spatial resolution data and this project is no different.  
 
-Overll the project was a great exercise in processing, creating a model, and accuracy assessing landcover classification in R.  Additional time could be spent working on the training polygons to be sure pure landcover is being represented and to be sure the training sets were balanced.
+Overll the project was a great exercise in processing, creating a model, and accuracy assessing landcover classification in R.  Additional time could be spent working on the training polygons to be sure pure landcover is being represented and to be sure the training sets were balanced.  A less agressive approach to landcover types would also be warranted.
